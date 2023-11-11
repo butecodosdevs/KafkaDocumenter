@@ -1,5 +1,9 @@
+import DocumentsAvailable from "./DocumentsAvailable";
+
 export default interface AplicationContext {
     openSideMenu: boolean,
+    loading: boolean,
     toggleSideMenu: () => void,
-    documents: {[key: string]: string}
+    toggleLoading: (loading: boolean) => void,
+    documents: DocumentsAvailable
 }

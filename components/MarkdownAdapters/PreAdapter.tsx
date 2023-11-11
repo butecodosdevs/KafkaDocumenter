@@ -2,7 +2,6 @@ import { ClassAttributes, HTMLAttributes, useEffect, useState } from "react";
 import { ExtraProps } from "react-markdown";
 
 function shouldShowCode() {
-    console.log(window.innerWidth);
     if (window.innerWidth < 1200) {
         return false;
     }

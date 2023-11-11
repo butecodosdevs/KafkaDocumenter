@@ -1,5 +1,7 @@
 import DocumentService from "@/services/DocumentService";
 import AplicationContext from "@/types/AplicationContext";
+import DocumentsAvailable from "@/types/DocumentsAvailable";
+import HashMapInterface from "@/types/HashMapInterface";
 import React, {useEffect, useState } from "react";
 
 const documentService = new DocumentService();
@@ -8,14 +10,21 @@ export const appContext = React.createContext<AplicationContext>({} as Aplicatio
 
 export default function AppContextProvider({children}: {children: React.ReactNode}) {
     const [openSideMenu, setOpenSideMenu] = useState(false);
-    const [documents, setDocuments] = useState<{[key: string]: string}>({});
+    const [loading, setLoading] = useState(true);
+    const [documents, setDocuments] = useState<DocumentsAvailable>({
+        docs: []
+    });
 
     const initial: AplicationContext = {
+        loading: loading,
         openSideMenu: openSideMenu,
         toggleSideMenu: function() {
             setOpenSideMenu(old => !old);            
         },
-        documents: documents
+        documents: documents,
+        toggleLoading: (loading: boolean) => {
+            setLoading(loading);
+        }
     }
 
     useEffect(() => {
@@ -23,7 +32,10 @@ export default function AppContextProvider({children}: {children: React.ReactNod
             const documents = await documentService.availableDocuments();
             setDocuments(documents);
         };
-        fetched();
+        fetched()
+        .then(() => {
+            setLoading(false);
+        })
     }, []);
 
     return(

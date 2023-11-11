@@ -28,3 +28,19 @@ html {
 body {
   height: 100%;
 }
+
+.loadingIcon {
+  animation: loading 2s infinite;
+}
+
+@keyframes loading {
+  0% {
+    stroke-dasharray: 450;
+  }
+  50% {
+    stroke-dasharray: 50;
+  }
+  100% {
+    stroke-dasharray: 450;
+  }
+}
