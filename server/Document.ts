@@ -1,4 +1,4 @@
-import { statSync, readFileSync, readdirSync, Stats } from 'fs';
+import { statSync, readFileSync, readdirSync, existsSync } from 'fs';
 import FileNotRead from './exceptions/FileNotRead';
 import { basename, join } from 'path';
 
@@ -26,7 +26,21 @@ export default class Document {
         return this._lastTimeEdited;
     }
 
+    static getExtension(path: string): string {
+        const basename = path.split(/[\\/]/).pop(); 
+        if(!basename) {
+            return "";
+        }
+        const pos = basename.lastIndexOf(".");
+        if (basename === "" || pos < 1)            
+            return "";                            
+        return basename.slice(pos + 1);
+    }
+
     static createDocumentFrom(path: string): Document {
+        if(!existsSync(path)) {
+            throw new FileNotRead(path);
+        }
         return new Document(path);
     }
 
@@ -36,6 +50,9 @@ export default class Document {
         for (let i = 0; i < dirEntries.length; i++) {
             const entry = dirEntries[i];
             const fullpath = join(path, entry);
+            if(this.getExtension(fullpath) !== 'md') {
+                continue;
+            }
             const fileStats = statSync(fullpath, {
                 throwIfNoEntry: false
             })
