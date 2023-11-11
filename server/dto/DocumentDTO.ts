@@ -1,5 +1,6 @@
 export default class DocumentDTO {
     constructor(
-        public title: string
+        public title: string,
+        public token: string
     ) {}
 }

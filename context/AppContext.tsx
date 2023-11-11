@@ -1,6 +1,5 @@
 import DocumentService from "@/services/DocumentService";
 import AplicationContext from "@/types/AplicationContext";
-import ServerDocuments from "@/types/ServerDocuments";
 import React, {useEffect, useState } from "react";
 
 const documentService = new DocumentService();
@@ -9,7 +8,7 @@ export const appContext = React.createContext<AplicationContext>({} as Aplicatio
 
 export default function AppContextProvider({children}: {children: React.ReactNode}) {
     const [openSideMenu, setOpenSideMenu] = useState(false);
-    const [documents, setDocuments] = useState<ServerDocuments>({ docs: []});
+    const [documents, setDocuments] = useState<{[key: string]: string}>({});
 
     const initial: AplicationContext = {
         openSideMenu: openSideMenu,
