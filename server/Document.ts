@@ -1,4 +1,4 @@
-import { statSync, readFileSync, readdirSync } from 'fs';
+import { statSync, readFileSync, readdirSync, Stats } from 'fs';
 import FileNotRead from './exceptions/FileNotRead';
 import { basename, join } from 'path';
 
@@ -13,18 +13,21 @@ export default class Document {
         this._lastTimeEdited = stats.mtime;
         this._title = basename(this.path, '.md');
     }
-    toJSON() {
-        return {
-              title: this._title,
-              lastTimeEdited: this.lastTimeEdited
-        };
+    
+    get token() {
+        return btoa(this.title);
     }
+
     get title(): string {
         return this._title;
     }
 
     get lastTimeEdited(): Date {
         return this._lastTimeEdited;
+    }
+
+    static createDocumentFrom(path: string): Document {
+        return new Document(path);
     }
 
     static createDocumentsFrom(path: string): Array<Document> {
