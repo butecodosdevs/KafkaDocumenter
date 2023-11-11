@@ -1,7 +1,6 @@
 import DocumentService from "@/services/DocumentService";
 import AplicationContext from "@/types/AplicationContext";
 import DocumentsAvailable from "@/types/DocumentsAvailable";
-import HashMapInterface from "@/types/HashMapInterface";
 import React, {useEffect, useState } from "react";
 
 const documentService = new DocumentService();

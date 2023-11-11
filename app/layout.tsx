@@ -1,12 +1,8 @@
 'use client';
 import { Inter } from 'next/font/google'
 import './globals.css'
-import AppContextProvider, { appContext } from '@/context/AppContext';
+import AppContextProvider from '@/context/AppContext';
 import SideBar from '@/components/SideBar';
-import MenuIndicator from '@/components/MenuIndicator';
-import HamburguerIcon from '@/components/HamburguerIcon';
-import { useContext, useState } from 'react';
-import MenuButton from '@/components/MenuButton';
 import Loading from '@/components/Loading';
 
 const inter = Inter({ subsets: ['latin'] })

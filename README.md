@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Como colaborar?
 
-## Getting Started
+O objetivo desse projeto é realizar a tradução [dessa página](https://data-flair.training/blogs/kafka-tutorials-home/). Entre no site e selecione algum tópico para realizar a tradução.
 
-First, run the development server:
+## Como realizar a tradução?
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Escolha alguma das issues do repositório. Todas as issues marcadas como `documentation` são páginas que ainda precisam ser traduzidas.
+- Clone o repositório e crie uma branch com o seguinte nome: `doc: nome do titulo da págian`.
+- Crie um arquivo com o nome do título na pasta `docs` na raiz do projeto.
+- Realize a tradução.
+- Assim que terminar, realize o commit das suas alterações.
+- Acesse a página do github e crie um `merge request` para a branch `main`.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Assim que a tradução for aceita, ela irá ser mergeada e aparecerá no menu lateral do site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Como realizar uma correção?
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Em casos onde um erro de tradução é identificado, uma issue deve ser criada no github com a label `translate_fix` especificando qual documento e qual porção está com erro de tradução.
 
-## Learn More
+- Escolha uma issue marcada como `translate_fix`.
+- Clone o repositório e crie uma branch com o seguinte nome: `doc_fix: nome do titulo da página`.
+- Acesse o arquivo contendo o problema de tradução.
+- Realize e dê commit nos ajustes de tradução.
+- Acesse a página do github e crie um `merge request` para a branch `main`. Além disso, associe a branch a issue.
 
-To learn more about Next.js, take a look at the following resources:
+Assim que a tradução for aceita, ela irá ser mergeada e aparecerá no menu lateral do site.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Detectou um problema no site?
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Em casos onde um problema no site é encontrado, deve ser reportado através de issues marcadas com a label `bug`

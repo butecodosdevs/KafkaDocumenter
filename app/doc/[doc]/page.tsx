@@ -6,7 +6,6 @@ import DocumentService from "@/services/DocumentService";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import MenuButton from "@/components/MenuButton";
-import HttpError from "@/services/HttpError";
 import { appContext } from "@/context/AppContext";
 
 interface RouteResource {
@@ -24,7 +23,6 @@ export default function Page({ params }: { params: RouteResource }) {
             try {
                 const content = await service.getDocument(doc);
                 setContent(content);
-                console.log('aquii');
                 toggleLoading(false);
             } catch(error: unknown) {
                 // TO-DO

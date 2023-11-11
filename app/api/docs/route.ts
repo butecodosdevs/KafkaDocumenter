@@ -1,7 +1,6 @@
 import Document from '@/server/Document';
 import AvailableDocumentStringAdapter from '@/server/adapter/AvailableDocumentAdapter';
 import WantedDocumentAdapter from '@/server/adapter/WantedDocumentAdapter';
-import DocumentWantedDocumentAdapter from '@/server/adapter/DocumentWantedDocumentAdapter';
 import FileNotRead from '@/server/exceptions/FileNotRead';
 import Cache from '@/server/service/CacheService';
 import DocumentRepository from '@/server/repository/DocumentRepository';

@@ -1,4 +1,3 @@
-import HashMapInterface from "@/types/HashMapInterface";
 import HttpError from "./HttpError";
 import DocumentsAvailable from "@/types/DocumentsAvailable";
 
