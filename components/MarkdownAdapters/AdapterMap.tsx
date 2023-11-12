@@ -9,6 +9,7 @@ import BlockquoteAdapter from "./BlockquoteAdapter";
 import EmAdapter from "./EmAdapter";
 import ImageAdapter from "./ImageAdapter";
 import LinkAdapter from "./LinkAdapter";
+import HeadingThreeAdapter from "./HeadingThreeAdapter";
 
 export const adapterMap: Partial<Components> | null | undefined = {
     h1(props) {
@@ -40,5 +41,8 @@ export const adapterMap: Partial<Components> | null | undefined = {
     },
     a(props) {
         return <LinkAdapter element={props}></LinkAdapter>
+    },
+    h3(props) {
+        return <HeadingThreeAdapter element={props}/>
     }
 }

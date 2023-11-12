@@ -10,7 +10,7 @@ export default function SideBarItem({ children, token, index }: { children: Reac
     const appendClass = pathname == path ? 'underline text-yellow-400' : '';
     return (
         <li>
-            <Link className='capitalize' href={path} onClick={() => toggleLoading(true)}>
+            <Link className='capitalize text-xs' href={path} onClick={() => toggleLoading(true)}>
                 <span className='font-bold'>{index + 1}. </span><span className={appendClass}>{children}</span>
             </Link>
         </li>
