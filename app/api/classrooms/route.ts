@@ -6,14 +6,15 @@ export async function GET(req: Request) {
 
   try {
     const repositories = await githubService.fetchClassroomRepositories();
-    
+
     const adapter = new AvailableClassroomAdapter();
     const classroom = Classroom.createClassroomFromRepositories(repositories);
 
+    
     const response = JSON.stringify({
         classrooms: classroom.map(_cr => adapter.adapt(_cr))
     });
-    
+   
     return new Response(response);
 
   
