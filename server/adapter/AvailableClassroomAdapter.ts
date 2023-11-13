@@ -5,6 +5,6 @@ import LessonDTO from "../dto/LessonDTO";
 export default class AvailableClassroomAdapter {
     adapt(classr: Classroom): ClassroomDTO {
         const lessonDTOs: LessonDTO[] = classr.lessons.map(lesson => new LessonDTO(lesson.title, lesson.order));
-        return new ClassroomDTO(classr.title, lessonDTOs);
+        return new ClassroomDTO(classr.id,classr.description, classr.language, classr.created_at,classr.title, lessonDTOs);
     }
 }
