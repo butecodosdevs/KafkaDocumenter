@@ -1,7 +1,9 @@
-import ServerDocuments from "./ServerDocuments";
+import DocumentsAvailable from "./DocumentsAvailable";
 
 export default interface AplicationContext {
     openSideMenu: boolean,
+    loading: boolean,
     toggleSideMenu: () => void,
-    documents: ServerDocuments
+    toggleLoading: (loading: boolean) => void,
+    documents: DocumentsAvailable
 }
