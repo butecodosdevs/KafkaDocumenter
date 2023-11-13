@@ -5,6 +5,9 @@ import Classroom from "@/types/ServerClassroom";
 import Contributors from "@/types/ServerContributors";
 import Contributor from "@/types/ServerContributor";
 import Author from '@/components/Author';
+import Link from 'next/link'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 const ClassroomBar: React.FC<Classroom> = ({id, title,
     description,
     imgUrl,
@@ -27,7 +30,6 @@ const ClassroomBar: React.FC<Classroom> = ({id, title,
         'gap-2',
         'w-full',
         'h-[200px]',
-
         'rounded-xl',
         'px-5',
         'py-2',
@@ -35,38 +37,51 @@ const ClassroomBar: React.FC<Classroom> = ({id, title,
         'h-full',
         'flex-col',
         'bg-opacity-50',
+        'transition-transform', 
+        'transform' ,
+        'hover:scale-105',
+        'hover:bg-opacity-90',
         dynamicBackgroundColor
       );
     
     return (
 
-        <article className={componentClasses} key={id_prop}>
+        <Link href={`/classroom/${title_prop}`} className={componentClasses} key={id_prop}>
+          <header className='flex items-center gap-'>
+          <h1 className='text-xl'> <b>{title_prop}</b></h1>
+    
+        
+          </header>
+    
+        <section className='w-full  flex-1 flex flex-col'>
+     
    
-        <section className='w-full  flex-1 flex flex-col '>
-        <h1 className='text-xl'> <b>{title_prop}</b></h1>
           <div className='text-sm'>
-            <p className='whitespace-nowrap w-full text-ellipsis overflow-hidden'>{description_prop}</p>
+
+            <p className='whitespace-nowrap w-full text-ellipsis overflow-hidden py-5'>{description_prop}</p>
           </div>
        
         </section>
       
         <footer className='w-full flex-1 flex text-sm items-center'>
-        <div className='w-1/2 flex items-start flex-col'>
-         
-          { 
-         autor_prop.map((contributor) =>(
-              <Author  key={contributor.id} id={contributor.id} avatar_url={contributor.avatar_url} login={contributor.login}/>
+        <div className='w-1/2 flex items-start relative h-[30px]'>
+  {autor_prop.map((contributor, index) => (
+    <Author
+      key={contributor.id}
+      id={contributor.id}
+      avatar_url={contributor.avatar_url}
+      login={contributor.login}
+      className={index >= 1 ? 'ml-4' : ''}
+    />
+  ))}
+        </div>
 
-          ))}
-                 
-          
-          </div>
           <div className='w-1/2 flex items-center justify-end'>
             <p>{moment(date_prop).format('MM/DD/YYYY')}</p>
           </div>
         
         </footer>
-      </article>
+      </Link>
       
 
 
@@ -74,11 +89,6 @@ const ClassroomBar: React.FC<Classroom> = ({id, title,
 };
 
 export default ClassroomBar;
-
-const calculateDescription= (description:string)=>{
-
-
-}
 
 const getRandomColor = () => {
     const colors = ['bg-red-600', 'bg-blue-600', 'bg-green-600', 'bg-indigo-600'];

@@ -1,18 +1,13 @@
 import Contributor from "@/types/ServerContributor";
-const Author: React.FC<Contributor> = ({ id, login, avatar_url
-     }) =>{
-
-return(
-
-<div key={id} className="flex items-center justify-center p-1 gap-1">
-    
-     <img className="rounded-full max-h-[30px]" src={`${avatar_url}`}></img>
-     <p>{login}</p>
-</div>
-
-);
-
-     };
+const Author: React.FC<Contributor & { className?: string }> = ({ id, login, avatar_url, className }) => {
+     return (
+       <img
+         key={id}
+         className={`rounded-full absolute w-[30px] h-[30px] border-5 border-cyan-50 border-opacity-20 ${className}`}
+         src={`${avatar_url}`}
+       />
+     );
+   };
 
      
      export default Author;

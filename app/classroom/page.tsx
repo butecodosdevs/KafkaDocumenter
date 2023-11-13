@@ -9,7 +9,7 @@ export default function Classroom() {
 
   const [classrooms, setClassrooms] = useState<ServerClassrooms>({ classrooms: []});
 
-  let date:Date = new Date();
+
 
   useEffect(() => {
     const fetched = async () => {
