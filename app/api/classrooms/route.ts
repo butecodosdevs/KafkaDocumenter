@@ -2,6 +2,8 @@ import GithubService from '@/services/GithubService';
 import Classroom from '@/server/Classroom';
 import AvailableClassroomAdapter from '@/server/adapter/AvailableClassroomAdapter';
 const githubService = new GithubService();
+
+
 export async function GET(req: Request) {
 
   try {
