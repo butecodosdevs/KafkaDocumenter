@@ -4,7 +4,7 @@ import LessonDTO from "../dto/LessonDTO";
 import ContributorDTO from "../dto/ContributorDTO";
 export default class AvailableClassroomAdapter {
     adapt(classr: Classroom): ClassroomDTO {
-        const lessonDTOs: LessonDTO[] = classr.lessons.map(lesson => new LessonDTO(lesson.title, lesson.order));
+        const lessonDTOs: LessonDTO[] = classr.lessons.map(lesson => new LessonDTO(lesson.title, lesson.order, lesson.type, lesson.content));
         const contributorsDTOs: ContributorDTO[] = classr.authors.serverContributors.map(contributor => new ContributorDTO(
             contributor.id, contributor.login, contributor.avatar_url
             ));

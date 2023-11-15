@@ -6,8 +6,7 @@ import Contributors from "@/types/ServerContributors";
 import Contributor from "@/types/ServerContributor";
 import Author from '@/components/Author';
 import Link from 'next/link'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+
 const ClassroomBar: React.FC<Classroom> = ({id, title,
     description,
     imgUrl,

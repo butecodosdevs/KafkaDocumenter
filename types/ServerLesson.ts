@@ -1,4 +1,7 @@
 export default interface ServerLesson {
     title: string,
-    order: number
+    order: number,
+    type:string,
+    content:string,
+   
 }

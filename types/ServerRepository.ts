@@ -10,4 +10,5 @@ export interface Repository {
 export interface RepositoryContent {
       name: string;
       type: 'file' | 'dir';
+      content:string;
 }

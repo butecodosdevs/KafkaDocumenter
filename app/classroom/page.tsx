@@ -14,7 +14,7 @@ export default function Classroom() {
   useEffect(() => {
     const fetched = async () => {
         const classReponse = await classroomService.availableClassrooms();
-    
+        
         setClassrooms(classReponse);
      
     };
