@@ -25,6 +25,23 @@ Em casos onde um erro de tradução é identificado, uma issue deve ser criada n
 
 Assim que a tradução for aceita, ela irá ser mergeada e aparecerá no menu lateral do site.
 
+## Como adicionar imagens?
+
+Para adicionar images na sua tradução, você pode adicioná-las através de links externos ou internamente. 
+
+### Adicionando imagens externamente
+
+Para adicionar imagens externas, basta copiar o link da imagem e seguir a sintaxe do [Markdown](https://www.markdownguide.org/basic-syntax/).
+
+### Adicionando imagens internamente
+
+Para adicionar imagens internamente, você precisa realizar os seguintes passos:
+
+- Realize o download da imagem.
+- Coloque a imagem no diretório: `public/assets`
+- Na porção desejada, siga a sintaxe do [Markdown](https://www.markdownguide.org/basic-syntax/) para adicionar a imagem.
+- No link para imagem, coloque `/assets/nome_da_imagem.extensao`.
+
 ## Detectou um problema no site?
 
 Em casos onde um problema no site é encontrado, deve ser reportado através de issues marcadas com a label `bug`
