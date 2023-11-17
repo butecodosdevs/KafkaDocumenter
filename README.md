@@ -42,6 +42,9 @@ Para adicionar imagens internamente, você precisa realizar os seguintes passos:
 - Na porção desejada, siga a sintaxe do [Markdown](https://www.markdownguide.org/basic-syntax/) para adicionar a imagem.
 - No link para imagem, coloque `/assets/nome_da_imagem.extensao`.
 
+## Como contribuir sem executar a aplicação?
+Se, por algum motivo, você querer ajudar sem rodar a aplicação, você pode traduzir o arquivo utilizando um editor online de Markdown com retorno em tempo real. Dessa forma, você consegue visualizar em tempo real as alterações. Acesse esse [link](https://stackedit.io/app#) para acessar o editor recomendado.
+
 ## Detectou um problema no site?
 
 Em casos onde um problema no site é encontrado, deve ser reportado através de issues marcadas com a label `bug`
