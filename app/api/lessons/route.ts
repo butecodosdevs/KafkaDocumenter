@@ -23,9 +23,9 @@ export async function GET(req: Request) {
     return new Response(response);
   } catch (error) {
     console.error('Erro na solicitação GET:', error);
-    return {
+    return new Response(JSON.stringify({
       status: 500,
       body: 'Erro interno do servidor',
-    };
+    }));
   }
 }
