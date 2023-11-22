@@ -10,6 +10,8 @@ import EmAdapter from "./EmAdapter";
 import ImageAdapter from "./ImageAdapter";
 import LinkAdapter from "./LinkAdapter";
 import HeadingThreeAdapter from "./HeadingThreeAdapter";
+import ListItem from "./ListItem";
+import ListAdapter from "./ListAdapter";
 
 export const adapterMap: Partial<Components> | null | undefined = {
     h1(props) {
@@ -44,5 +46,11 @@ export const adapterMap: Partial<Components> | null | undefined = {
     },
     h3(props) {
         return <HeadingThreeAdapter element={props}/>
+    },
+    li(props) {
+        return <ListItem element={props}></ListItem>
+    },
+    ul(props) {
+        return <ListAdapter element={props}></ListAdapter>
     }
 }
