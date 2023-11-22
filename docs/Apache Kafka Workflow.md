@@ -57,7 +57,7 @@ Porém, Zookeeper também realiza a eleição de lider entre os Kafka brokers, n
 
 Portanto, tudo se tratava do fluxo de trabalho do Apache Kafka. Espero que você goste de nossa explicação.
 
-#Conclusão
+# Conclusão
 
 Consequentemente, vimos o conceito do fluxo de trabalho do Apache Kafka. Além disso, neste tutorial do Kafka WorkFlow, discutimos o fluxo de trabalho do sistema de mensagens Pub-Sub, bem como o fluxo de trabalho do sistema de mensagens do **Kafka Queue**(fila do Kafka).
 
