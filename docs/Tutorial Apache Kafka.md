@@ -42,78 +42,78 @@ Profissionais que desejam fazer carreira em Big Data Analytics usando o sistema 
 ## Pré-requisitos para o Kafka
 Você deve ter um bom conhecimento de Java, Scala, sistema de mensagens distribuídas e ambiente Linux antes de prosseguir com este tutorial do Apache Kafka.
 
-##Arquitetura Kafka
+## Arquitetura Kafka
 Abaixo apresentaremos as quatro APIs principais do Apache Kafka:
 
-###1. API de Produtor Kafka
+### 1. API de Produtor Kafka
 
 Esta API do Kafka Producer permite que um aplicativo publique um fluxo de registros para um ou mais tópicos do Kafka.
 
-###2. API de Consumidor Kafka
+### 2. API de Consumidor Kafka
 
 A API Consumer permite que um aplicativo pegue um ou mais tópicos e processe o fluxo contínuo de registros produzidos para eles.
 
-###3. API de Fluxos Kafka
+### 3. API de Fluxos Kafka
 
 A API Streams permite que um aplicativo se comporte como um processador de fluxo, consumindo um fluxo de entrada de um ou mais tópicos e gerando um fluxo de saída para um ou mais tópicos de saída, modificando eficientemente os fluxos de entrada em fluxos de saída.
 
-###4. API do conector Kafka
+### 4. API do conector Kafka
 
 A API do Connector permite criar e executar produtores ou consumidores reutilizáveis que permitem a conexão entre tópicos Kafka e aplicativos ou sistemas de dados existentes.
 
-##Componentes do Kafka
+## Componentes do Kafka
 
-###1. Tópico Kafka
+### 1. Tópico Kafka
 Um grupo de mensagens que pertencem a uma categoria específica é conhecido como Tópico. Armazenamentos de dados em tópicos. Além disso, podemos replicar e particionar tópicos. Aqui, replicar refere-se a cópias e partição refere-se à divisão. Além disso, visualize-os como logs nos quais Kafka armazena mensagens. No entanto, esta capacidade de replicar e particionar tópicos é um dos fatores que permitem a tolerância a falhas e escalabilidade do Kafka.
 
-###2. Produtor Kafka
+### 2. Produtor Kafka
 Os produtores publicam as mensagens sobre um ou mais tópicos Kafka.
 
-###3. Consumidor Kafka
+### 3. Consumidor Kafka
 Os consumidores pegam um ou mais tópicos e consomem mensagens já publicadas através da extração de dados dos corretores.
 
-###4. Corretor Kafka
+### 4. Corretor Kafka
 São basicamente sistemas que mantêm os dados publicados. Um único broker pode ter zero ou mais partições por tópico.
 
-###5. Kafka Zookeeper
+### 5. Kafka Zookeeper
 Com a ajuda do Zookeeper, Kafka fornece aos corretores metadados sobre os processos em execução no sistema e concede verificação de integridade e eleição de liderança do corretor.
 
-##Anatomia de um log
+## Anatomia de um log
 Vemos o log como as partições. Basicamente, uma fonte de dados grava mensagens no log. Uma das vantagens é que a qualquer momento um ou mais consumidores podem ler o log que selecionarem. Aqui, o diagrama abaixo mostra que um log está sendo gravado pela fonte de dados e lido pelos consumidores em diferentes deslocamentos.
 
-##Registro de dados
+## Registro de dados
 Pelo Kafka, as mensagens são retidas por um período de tempo considerável. Além disso, os consumidores podem ler conforme sua conveniência. No entanto, se o Kafka estiver configurado para manter mensagens por 24 horas e um cliente ficar inativo por mais de 24 horas, o cliente perderá mensagens.
 
 E as mensagens podem ser lidas a partir do último deslocamento conhecido, se o tempo de inatividade por parte do consumidor for de apenas 60 minutos. Kafka não acompanha o que os consumidores estão lendo em um tópico.
 
-##Partição em Kafka
+## Partição em Kafka
 Existem poucas partições em cada corretor Kafka. Cada partição pode ser um líder ou uma réplica de um tópico. Além disso, juntamente com a atualização das réplicas com novos dados, o Leader é responsável por todas as gravações e leituras de um tópico. A réplica assume o papel de novo líder se de alguma forma o líder falhar.
 
-##Importância do Java no Apache Kafka
+##  Importância do Java no Apache Kafka
 Apache Kafka é escrito em Java puro e também a API nativa do Kafka é java. No entanto, muitas outras linguagens como C++, Python, .Net, Go, etc. também suportam Kafka.
 
 Ainda assim, uma plataforma onde não há necessidade de utilização de biblioteca de terceiros é o Java. Além disso, podemos dizer que escrever código em linguagens diferentes de Java será um pouco trabalhoso.
 
 Além disso, podemos usar a linguagem Java se precisarmos das altas taxas de processamento que são padrão no Kafka. Além disso, Java oferece um bom suporte comunitário para clientes consumidores Kafka. Portanto, é a escolha certa implementar Kafka em Java.
 
-##Casos de uso do Kafka
+##  Casos de uso do Kafka
 Existem vários casos de uso do Kafka que mostram porque realmente usamos o Apache Kafka.
 
-###Mensagens
+### Mensagens
 Kafka é o melhor substituto para os corretores de mensagens tradicionais. Podemos dizer que o Kafka tem melhor rendimento, replicação, tolerância a falhas e particionamento integrado, o que o torna uma solução melhor para aplicativos de processamento de mensagens em grande escala.
 
-###Métricas
+### Métricas
 Kafka é utilizado principalmente para dados de monitoramento operacional. Inclui a agregação de estatísticas de aplicativos distribuídos para gerar feeds centralizados de dados operacionais.
 
-###Fonte de eventos
+### Fonte de eventos
 Kafka é um ótimo back-end para aplicativos de fornecimento de eventos, pois suporta dados de log armazenados muito grandes.
 
-###Comparações em Kafka
+## Comparações em Kafka
 Muitos aplicativos oferecem a mesma funcionalidade do Kafka, como ActiveMQ, RabbitMQ, Apache Flume, Storm e Spark. Então por que você deveria optar pelo Apache Kafka em vez de outros?
 
 Vejamos as comparações abaixo:
 
-###1. Apache Kafka versus Apache Flume
+### 1. Apache Kafka versus Apache Flume
 
 I. Tipos de ferramenta
 
@@ -127,7 +127,7 @@ Apache Kafka – Usando pipelines de ingestão, ele replica os eventos.
 
 Apache Flume – Não replica os eventos.
 
-###2. RabbitMQ x Apache Kafka
+### 2. RabbitMQ x Apache Kafka
 
 Uma das principais alternativas do Apache Kafka é o RabbitMQ.
 
@@ -149,7 +149,7 @@ Apache Kafka – permite processamento distribuído de log confiável. Além dis
 
 RabbitMQ – O consumidor é baseado apenas em FIFO, lendo do HEAD e processando sequencialmente.
 
-###3. Sistemas de filas tradicionais versus Apache Kafka
+### 3. Sistemas de filas tradicionais versus Apache Kafka
 
 I. Retenção de mensagens
 
