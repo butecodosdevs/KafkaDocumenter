@@ -31,7 +31,7 @@ Enquanto que, sem uma performace de impacto, cada broker consegue suportar Terab
 No intuito de manejar e coordenar os dados, o broker do Kafka usa Zookeeper. Inclusive, é usado para notificar o produtor e o consumidor sobre a presença de qualquer novo broker no Kafka ou falha do broker no sistema Kafka.
 
 Desde que o Zookeeper envie uma notificação acerca/quanto a da presença ou falha do broker, então o produtor e o consumidor tomam a decisão e começam a coordenar suas tarefas com outro broker.
-### **b) Kafka Producers
+### **b) Kafka Producers**
 
 Além disso, os Producers no Kafka inserem dados aos Brokers. Todos os produtores varrem, buscam e enviam uma mensagem para o novo broker, precisamente quando o broker é inicializado.
 
@@ -58,7 +58,7 @@ O Tópico (Topic) é um canal lógico donde os Produtores publicam mensagens e o
 Eis abaixo uma imagem que demonstra o relacionamento entra os Tópicos Kafka e as Partições.
 
 
-### **b) Partitions no Kafka **
+### **b) Partitions no Kafka**
 
 Num Cluster Kafka os Tópicos são divididos em Partições (Partitions) e replicadas entre os Brokers.
 
